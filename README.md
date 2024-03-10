@@ -38,8 +38,30 @@ To rebuild:
 ## Publish you book online
 
 - Create a github repository without a README.md
-- 
+- In the same folder of our book-template, execute the following:
 
+    $ git init
+    $ git add README.md book-template
+    $ git commit -m "First jupyter book template"
+    $ git branch -M main
+    $ git remote add origin https://github.com/cguz/jupyter-book-template.git
+    $ git push -u origin main
+
+- Install ghp-impot:
+
+    $ pip install ghp-import
+
+- Create the branch gh-pages with the content of the _build/html/
+
+    $ ghp-import -n -p -f book-template/_build/html
+
+- The website should be visible in :
+
+    https://cguz.github.io/jupyter-book-template/intro.html
+
+- If not, Go to: 
+
+    Options -> GitHub Pages to ensure that the gh-pages branch is configured
 
 # References
 
